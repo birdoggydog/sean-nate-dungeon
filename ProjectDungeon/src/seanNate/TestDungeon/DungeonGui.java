@@ -8,6 +8,7 @@ public class DungeonGui extends JFrame {
 	JPanel textWindow;
 	JTextArea dungeonArea;
 	String title = "Simple Dungeon";
+	Font courier= new Font("Courier New", Font.PLAIN, 10);
 	
 	public DungeonGui(int width, int height) {
 		setTitle(title);
@@ -16,6 +17,9 @@ public class DungeonGui extends JFrame {
 		textWindow = new JPanel();
 		dungeonArea = new JTextArea(height,width);
 		dungeonArea.setEditable(false);
+		dungeonArea.setFont(courier);
+		dungeonArea.setForeground(Color.BLACK);
+		dungeonArea.setBackground(Color.BLUE);
 		textWindow.add(dungeonArea);
 		add(textWindow);
 		setVisible(true);
