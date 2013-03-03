@@ -8,5 +8,5 @@ public class ItemTypeConstants {
 	public static final int WEAPON_CONST= 4;
 	public static final int PROFESSION_ITEM_CONST=5;
 	public static final int PERSONAL_ITEM_CONST= 6;
-	
+	public static final int WAND_CONST = 7;
 }
