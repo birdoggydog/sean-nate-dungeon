@@ -7,17 +7,17 @@ import java.util.Scanner;
 
 import Combat.CombatFactory;
 
-import seanNate.Dungeon.Dungeon;
+import seanNate.Dungeon.BaseDungeon;
 import seanNate.Dungeon.DungeonMap;
-import seanNate.Dungeon.Hallway;
-import seanNate.Dungeon.Room;
+import seanNate.Dungeon.BaseHallways;
+import seanNate.Dungeon.BaseRoom;
 import seanNate.Dungeon.SimpleHallway;
 import seanNate.DungeonFactory.CreatureFactory;
 import seanNate.DungeonFactory.RoomFactory;
 import seanNate.Interactive.Creature;
 import seanNate.Interactive.SimpleCreature;
 
-public class testDungeonGen extends Dungeon {
+public class testDungeonGen extends BaseDungeon {
 	
 	RoomFactory rf;
 	DungeonMap map;
@@ -37,15 +37,15 @@ public class testDungeonGen extends Dungeon {
 		numRooms = 40;
 		numCreatures = 9000;
 		int creaturesFound = 0;
-		rooms = new ArrayList<Room>();
-		hallways = new ArrayList<Hallway>();
+		rooms = new ArrayList<BaseRoom>();
+		hallways = new ArrayList<BaseHallways>();
 		creatures = new ArrayList<Creature>();
 		display = new DungeonGui(width, height);
 		
 		rf = new RoomFactory();
 		int numFound= 0;
 		while (numFound< numRooms) {
-			Room rm = rf.GenSmallRoom(random.nextInt(width),random.nextInt(height) , 4, 4);
+			BaseRoom rm = rf.GenSmallRoom(random.nextInt(width),random.nextInt(height) , 4, 4);
 			if(map.canAdd(rm)) {
 				map.add(rm);
 				rooms.add(rm);
@@ -65,7 +65,7 @@ public class testDungeonGen extends Dungeon {
 			y = random.nextInt(height);
 			Point location = new Point (x,y);
 			if (map.canPlaceMob(location)) {
-				creatures.add(new SimpleCreature(location));
+				creatures.add(new SimpleCreature(location,random));
 				creaturesFound++;
 			}
 		}	

@@ -3,7 +3,7 @@ package seanNate.Dungeon;
 import java.awt.Point;
 import java.util.ArrayList;
 
-public class SimpleRoom extends Room{
+public class SimpleRoom extends BaseRoom{
 	public SimpleRoom(int width, int height, Point entrance, ArrayList<Point> layout) {
 		super();
 		this.width = width;

@@ -15,7 +15,7 @@ public class DungeonMap {
 		initMap();
 	}
 	
-	public boolean canAdd(Room rm) {
+	public boolean canAdd(BaseRoom rm) {
 		for (Point p: rm.layout) {
 			if(pointInDungeon(p)) {
 				if (ptOverlap(p)) {
@@ -31,6 +31,7 @@ public class DungeonMap {
 		}
 		return true;
 	}
+	// checks to see if there is atleast one section of wall between a room tiles of one room and another room.
 	private boolean wallSep(Point p) {
 		int x; 
 		int y;
@@ -76,7 +77,7 @@ public class DungeonMap {
 			return false;
 		}
 	}
-	public void add(Room rm) {
+	public void add(BaseRoom rm) {
 		// TODO Auto-generated method stub
 		for (Point p : rm.layout) {
 			if (rm.isEntrance(p.x, p.y))

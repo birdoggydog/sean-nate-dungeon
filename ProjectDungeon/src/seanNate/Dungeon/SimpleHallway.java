@@ -3,7 +3,7 @@ package seanNate.Dungeon;
 import java.awt.Point;
 import java.util.ArrayList;
 
-public class SimpleHallway extends Hallway{
+public class SimpleHallway extends BaseHallways{
 
 	public SimpleHallway(Point start, Point end) {		
 		this.start = start;
