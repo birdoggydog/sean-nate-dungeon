@@ -3,7 +3,7 @@ package seanNate.Dungeon;
 import java.awt.Point;
 import java.util.List;
 
-import Inventory.Item;
+import Inventory.BaseItem;
 
 import seanNate.Interactive.Creature;
 
@@ -11,7 +11,7 @@ public abstract class BaseRoom {
 	
 	public int height;
 	public int width;
-	public List<Item> items;
+	public List<BaseItem> items;
 	public List<Creature> creatures;
 	public List<Point> layout;
 	public Point entrance;

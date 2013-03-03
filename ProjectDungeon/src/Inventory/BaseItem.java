@@ -2,7 +2,7 @@ package Inventory;
 
 import java.awt.Point;
 
-public class Item {
+public class BaseItem {
 	String description;
 	String name;
 	int weight;

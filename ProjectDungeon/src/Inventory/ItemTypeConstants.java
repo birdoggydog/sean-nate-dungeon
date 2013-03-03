@@ -1,12 +1,12 @@
 package Inventory;
 
 public class ItemTypeConstants {
-	int armor = 0;
-	int clothes = 1;
-	int flair = 2;
-	int gem = 3;
-	int weapon = 4;
-	int professionItem=5;
-	int personalItem = 6;
+	public static final int ARMOR_CONST = 0;
+	public static final int CLOTHES_CONST= 1;
+	public static final int FLAIR_CONST= 2;
+	public static final int GEM_CONST= 3;
+	public static final int WEAPON_CONST= 4;
+	public static final int PROFESSION_ITEM_CONST=5;
+	public static final int PERSONAL_ITEM_CONST= 6;
 	
 }
