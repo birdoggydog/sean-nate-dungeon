@@ -5,29 +5,39 @@ import java.lang.reflect.Array;
 public abstract class BaseInventory {
 	int size;
 	int weightAllow;
-	Array weapons;
-	Array armor;
-	Array professionItems;
-	Array personalItems;
-	Array clothes;
-	Array flair;
-	Array backpack;
-	public Array getArmor() {
+	BaseItem  weapons[];
+	BaseItem armor[];
+	BaseItem  professionItems[];
+	BaseItem  personalItems[];
+	BaseItem  clothes[];
+	BaseItem  flair[];
+	BaseItem  backpack[];
+	BaseItem  equipped[];
+	public BaseInventory() {
+		armor = new BaseItem[BodyLocationConstants.armorLocations.length];
+		clothes = new BaseItem[BodyLocationConstants.clothesLocations.length];
+		weapons = new BaseItem[BodyLocationConstants.armorLocations.length];
+		professionItems = new BaseItem[BodyLocationConstants.armorLocations.length];
+		personalItems = new BaseItem[BodyLocationConstants.clothesLocations.length];
+		backpack= new BaseItem[BodyLocationConstants.armorLocations.length];
+		equipped = new BaseItem[BodyLocationConstants.armorLocations.length];	
+	}
+	public BaseItem  getArmor() {
 		return armor;
 	}
-	public Array getWeapons() {
+	public BaseItem  getWeapons() {
 		return weapons;
 	}
-	public Array getProfessionItems() {
+	public BaseItem  getProfessionItems() {
 		return armor;
 	}
-	public Array getFlair() {
+	public BaseItem  getFlair() {
 		return weapons;
 	}
-	public Array getClothes() {
+	public BaseItem  getClothes() {
 		return weapons;
 	}
-	public Array getBackpack(){
+	public BaseItem  getBackpack(){
 		return backpack;
 	}
 	public boolean addItemTo(BaseItem t) {
@@ -67,8 +77,11 @@ public abstract class BaseInventory {
 		return false;
 	}
 	private boolean addArmor(BaseItem t) {
-		// TODO Auto-generated method stub
-		
+		for (int i: BodyLocationConstants.armorLocations) {
+			if (armor.get(i, i) == null) {
+				armor[i] = t;
+			}
+		}
 		return false;
 	}
 }
